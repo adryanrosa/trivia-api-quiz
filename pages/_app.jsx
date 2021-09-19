@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { ThemeProvider } from 'styled-components';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -8,7 +9,13 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Component { ...pageProps } />
+      <ThemeProvider
+        theme={ {
+          color: 'mediumseagreen',
+        } }
+      >
+        <Component { ...pageProps } />
+      </ThemeProvider>
     </>
   );
 }
