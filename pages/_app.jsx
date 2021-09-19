@@ -1,5 +1,8 @@
 import Head from 'next/head';
+import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
+
+import store from '../src/redux/store';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,13 +12,15 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ThemeProvider
-        theme={ {
-          color: 'mediumseagreen',
-        } }
-      >
-        <Component { ...pageProps } />
-      </ThemeProvider>
+      <Provider store={ store }>
+        <ThemeProvider
+          theme={ {
+            color: 'mediumseagreen',
+          } }
+        >
+          <Component { ...pageProps } />
+        </ThemeProvider>
+      </Provider>
     </>
   );
 }
