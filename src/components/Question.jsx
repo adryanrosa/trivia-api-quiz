@@ -77,7 +77,7 @@ function Question({ questions }) {
             if (currQuestion < LAST_QUESTION) {
               setCurrQuestion(currQuestion + 1);
             } else {
-              router.push('/');
+              router.push('/feedback');
             }
           } }
         >
