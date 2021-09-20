@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const Answer = styled.button`
-  opacity: ${({ theme }) => { if (theme.answered || theme.over) return '0.75'; }};
+  opacity: ${({ theme }) => { if (theme.over) return '0.75'; }};
   border: ${({ theme }) => {
-    if (theme.answered || theme.over) {
+    if (theme.over) {
       return `3px solid ${theme.id === 'correct'
         ? 'rgb(6, 240, 15)' : 'rgb(255, 0, 0)'}`;
     }
