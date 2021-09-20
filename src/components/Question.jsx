@@ -21,8 +21,8 @@ function Question({ questions }) {
   ].sort((a, b) => a.answer.localeCompare(b.answer));
 
   useEffect(() => {
-    dispatch(setOver(false));
     dispatch(resetTime());
+    dispatch(setOver(false));
   }, [dispatch, currQuestion]);
 
   return (
