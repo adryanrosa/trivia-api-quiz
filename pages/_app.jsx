@@ -41,6 +41,7 @@ function MyApp({ Component, pageProps }) {
               500: '1.25rem',
               700: '1.5rem',
               800: '1.75rem',
+              900: '2rem',
             },
             fontWeights: {
               regular: 400,

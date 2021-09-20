@@ -1,23 +1,35 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Image from 'next/image';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 import Happy from '../public/images/happy.svg';
 import Sad from '../public/images/sad.svg';
 
 const Main = styled.main`
   text-align: center;
+  font-size: ${({ theme }) => theme.fontSizes['500']};
+  padding: 2rem;
 
+  h2 {
+    font-size: ${({ theme }) => theme.fontSizes['900']};
+  }
+  
   .image-container {
-    max-width: 20rem;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 30rem;
+    margin: 2rem auto;
+  }
+
+  .message {
+    color: ${({ theme }) => (theme.goodScore ? '#84DD63' : '#F21B3F')};
+    font-weight: ${({ theme }) => theme.fontWeights.bold};
+    opacity: 0.875;
   }
 `;
 
 function Feedback() {
   const { name, assertions, points } = useSelector(({ user }) => user);
+  const goodScore = assertions > 2;
 
   useEffect(() => {
     const newRank = {
@@ -35,19 +47,37 @@ function Feedback() {
   }, []);
 
   return (
-    <Main>
-      <h2>Your score</h2>
+    <ThemeProvider theme={ { goodScore } }>
+      <Main>
+        <h2 className="message">
+          {
+            goodScore
+              ? 'Nice job!'
+              : 'Better luck next time...'
+          }
+        </h2>
 
-      <div className="image-container">
-        <Image src={ assertions > 2 ? Happy : Sad } />
-      </div>
+        <div className="image-container">
+          <Image src={ goodScore ? Happy : Sad } />
+        </div>
 
-      <p>
-        {`You've got ${assertions} ${assertions === 1
-          ? 'question' : 'questions'} right`}
-      </p>
-      <p>{`You scored ${points} points`}</p>
-    </Main>
+        <p>
+          You&apos;ve got
+          {' '}
+          <span className="message">{assertions}</span>
+          {' '}
+          {assertions === 1 ? 'question' : 'questions'}
+          {' '}
+          right
+        </p>
+
+        <p>
+          Your score was
+          {' '}
+          <span className="message">{points}</span>
+        </p>
+      </Main>
+    </ThemeProvider>
   );
 }
 
