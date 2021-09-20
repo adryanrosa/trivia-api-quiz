@@ -17,9 +17,6 @@ const Main = styled.main`
   }
 
   .image-container {
-    max-width: 20rem !important;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 3rem;
   }
 `;

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Image from 'next/image';
+import Link from 'next/link';
 import styled, { ThemeProvider } from 'styled-components';
 
 import Happy from '../public/images/happy.svg';
@@ -16,7 +17,7 @@ const Main = styled.main`
   }
   
   .image-container {
-    max-width: 30rem;
+    max-width: 25rem;
     margin: 2rem auto;
   }
 
@@ -24,6 +25,23 @@ const Main = styled.main`
     color: ${({ theme }) => (theme.goodScore ? '#84DD63' : '#F21B3F')};
     font-weight: ${({ theme }) => theme.fontWeights.bold};
     opacity: 0.875;
+  }
+`;
+
+const Button = styled.button`
+  display: block;
+  border: none;
+  background: linear-gradient(to right, hsl(198, 60%, 50%), hsl(176, 68%, 64%));
+  color: ${({ theme }) => theme.colors.neutral100};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};;
+  margin: 0.75rem auto;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 13.75rem;
+  border-radius: 0.25rem;
+  
+  &:hover {
+    filter: opacity(0.8);
   }
 `;
 
@@ -76,6 +94,9 @@ function Feedback() {
           {' '}
           <span className="message">{points}</span>
         </p>
+
+        <Link href="/quizz"><Button>Play Again</Button></Link>
+        <Link href="/ranking"><Button>Ranking</Button></Link>
       </Main>
     </ThemeProvider>
   );
