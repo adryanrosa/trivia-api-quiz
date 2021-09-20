@@ -34,7 +34,8 @@ function MyApp({ Component, pageProps }) {
               neutral800: 'hsl(218, 28%, 13%)',
             },
             fontSizes: {
-              200: '0.625rem',
+              100: '0.625rem',
+              200: '0.875rem',
               400: '1.125rem',
               500: '1.25rem',
             },
