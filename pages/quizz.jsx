@@ -1,7 +1,7 @@
 import Question from '../src/components/Question';
 
 export async function getServerSideProps() {
-  const url = 'https://opentdb.com/api.php?amount=5';
+  const url = 'https://opentdb.com/api.php?amount=5&encode=base64';
   const res = await fetch(url);
   const data = await res.json();
 

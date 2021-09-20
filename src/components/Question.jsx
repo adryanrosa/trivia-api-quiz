@@ -20,7 +20,7 @@ function Question({ questions }) {
 
   return (
     <div>
-      {questions[currQuestion].question}
+      {atob(questions[currQuestion].question)}
 
       {
         generateAnswers(questions[currQuestion].correct_answer,
@@ -32,7 +32,7 @@ function Question({ questions }) {
                 disabled={ answered || over }
                 onClick={ () => setAnswered(true) }
               >
-                {answer}
+                {atob(answer)}
               </Answer>
             </ThemeProvider>
           ))
