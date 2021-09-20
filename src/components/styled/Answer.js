@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 const Answer = styled.button`
-  opacity: ${({ theme }) => { if (theme.over) return '0.75'; }};
+  opacity: ${({ theme }) => { if (theme.over) return '0.875'; }};
   border: ${({ theme }) => {
     if (theme.over) {
-      return `0.125rem solid ${theme.id === 'correct'
-        ? 'rgb(6, 240, 15)' : 'rgb(255, 0, 0)'}`;
+      return `0.1875rem solid ${theme.id === 'correct'
+        ? '#84DD63' : '#F21B3F'}`;
     }
 
-    return '0.125rem solid hsla(198, 60%, 50%, 50%)';
+    return '0.1875rem solid hsla(198, 60%, 50%, 50%)';
   }};
   display: block;
   background-color: transparent;
@@ -27,7 +27,7 @@ const Answer = styled.button`
 
   @media (hover:hover) {
     &:hover {
-      filter: brightness(1.75);
+      filter: ${({ theme }) => { if (!theme.over) return 'brightness(1.75)'; }};
     }
   }
 `;
