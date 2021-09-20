@@ -3,6 +3,8 @@ import { ThemeProvider } from 'styled-components';
 import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 
+import Category from './styled/Category';
+import QuestionTitle from './styled/QuestionTitle';
 import Answer from './styled/Answer';
 import Next from './styled/Next';
 import Timer from './Timer';
@@ -26,42 +28,45 @@ function Question({ questions }) {
   }, [dispatch, currQuestion]);
 
   return (
-    <div>
-      <Timer />
+    <>
+      <div>
+        <Timer />
+        <Category>{window.atob(questions[currQuestion].category)}</Category>
+        <QuestionTitle>{window.atob(questions[currQuestion].question)}</QuestionTitle>
+      </div>
 
-      {window.atob(questions[currQuestion].question)}
+      <div>
+        {
+          generateAnswers(questions[currQuestion].correct_answer,
+            questions[currQuestion].incorrect_answers)
+            .map(({ answer, id }, index) => (
+              <ThemeProvider theme={ { over, id } } key={ index }>
+                <Answer
+                  type="button"
+                  disabled={ over }
+                  onClick={ () => dispatch(setOver(true)) }
+                >
+                  {window.atob(answer)}
+                </Answer>
+              </ThemeProvider>
+            ))
+        }
 
-      {
-        generateAnswers(questions[currQuestion].correct_answer,
-          questions[currQuestion].incorrect_answers)
-          .map(({ answer, id }, index) => (
-            <ThemeProvider theme={ { over, id } } key={ index }>
-              <Answer
-                type="button"
-                disabled={ over }
-                onClick={ () => dispatch(setOver(true)) }
-              >
-                {window.atob(answer)}
-              </Answer>
-            </ThemeProvider>
-          ))
-      }
-
-      <Next
-        disabled={ !over }
-        onClick={ () => {
-          const LAST_QUESTION = 4;
-
-          if (currQuestion < LAST_QUESTION) {
-            setCurrQuestion(currQuestion + 1);
-          } else {
-            router.push('/');
-          }
-        } }
-      >
-        Next Question
-      </Next>
-    </div>
+        <Next
+          disabled={ !over }
+          onClick={ () => {
+            const LAST_QUESTION = 4;
+            if (currQuestion < LAST_QUESTION) {
+              setCurrQuestion(currQuestion + 1);
+            } else {
+              router.push('/');
+            }
+          } }
+        >
+          Next Question
+        </Next>
+      </div>
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import './reset.css';
 
 import store from '../src/redux/store';
 
@@ -38,6 +39,8 @@ function MyApp({ Component, pageProps }) {
               200: '0.875rem',
               400: '1.125rem',
               500: '1.25rem',
+              700: '1.5rem',
+              800: '1.75rem',
             },
             fontWeights: {
               regular: 400,
