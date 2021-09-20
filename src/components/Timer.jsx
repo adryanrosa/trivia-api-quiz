@@ -44,13 +44,11 @@ function Timer() {
   }, [dispatch]);
 
   return (
-    <p>
-      <ThemeProvider theme={ { time } }>
-        <Container>
-          <span>{time}</span>
-        </Container>
-      </ThemeProvider>
-    </p>
+    <ThemeProvider theme={ { time } }>
+      <Container>
+        <span>{time}</span>
+      </Container>
+    </ThemeProvider>
   );
 }
 

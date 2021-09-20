@@ -8,12 +8,12 @@ import QuestionTitle from './styled/QuestionTitle';
 import Answer from './styled/Answer';
 import Next from './styled/Next';
 import Timer from './Timer';
-import { setOver, resetTime } from '../redux/actions';
+import { setOver, resetTime, addAssertion, addPoints } from '../redux/actions';
 
 function Question({ questions }) {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { over } = useSelector(({ timer }) => timer);
+  const { over, time } = useSelector(({ timer }) => timer);
 
   const [currQuestion, setCurrQuestion] = useState(0);
 
@@ -44,7 +44,25 @@ function Question({ questions }) {
                 <Answer
                   type="button"
                   disabled={ over }
-                  onClick={ () => dispatch(setOver(true)) }
+                  onClick={ () => {
+                    dispatch(setOver(true));
+
+                    const DEFAULT_POINTS = 10;
+                    const difficultyPoints = {
+                      hard: 3,
+                      medium: 2,
+                      easy: 1,
+                    };
+
+                    if (id === 'correct') {
+                      const points = DEFAULT_POINTS
+                      + (time * difficultyPoints[atob(questions[currQuestion]
+                        .difficulty)]);
+
+                      dispatch(addAssertion());
+                      dispatch(addPoints(points));
+                    }
+                  } }
                 >
                   {window.atob(answer)}
                 </Answer>
