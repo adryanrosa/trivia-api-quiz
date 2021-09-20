@@ -7,9 +7,9 @@ const Next = styled.button`
   padding: 0.875rem 2.5rem;
   border: none;
   border-radius: 2.5rem;
-  color: hsl(0, 0%, 100%);
-  font-size: 1.25rem;
-  font-weight: 600;
+  color: ${({ theme }) => theme.colors.neutral100};
+  font-size: ${({ theme }) => theme.fontSizes['500']};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
   cursor: pointer;
 
   &:disabled {

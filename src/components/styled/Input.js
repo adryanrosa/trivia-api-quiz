@@ -5,7 +5,7 @@ const Input = styled.input`
   background-color: transparent;
   padding: 1em 0.5rem;
   border: none;
-  border-bottom: 1px solid hsla(0, 0%, 100%, 62.5%);
+  border-bottom: 0.0625rem solid hsla(0, 0%, 100%, 62.5%);
   border-radius: 0.125rem;
   color: ${({ theme }) => theme.colors.neutral100};
 

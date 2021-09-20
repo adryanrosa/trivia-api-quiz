@@ -4,11 +4,11 @@ const Answer = styled.button`
   opacity: ${({ theme }) => { if (theme.over) return '0.75'; }};
   border: ${({ theme }) => {
     if (theme.over) {
-      return `3px solid ${theme.id === 'correct'
+      return `0.1875rem solid ${theme.id === 'correct'
         ? 'rgb(6, 240, 15)' : 'rgb(255, 0, 0)'}`;
     }
 
-    return '3px solid hsla(198, 60%, 50%, 50%)';
+    return '0.1875rem solid hsla(198, 60%, 50%, 50%)';
   }};
   display: block;
   background-color: transparent;
