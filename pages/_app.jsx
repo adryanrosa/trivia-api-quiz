@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.neutral700};
     color: ${({ theme }) => theme.colors.neutral100};
     font-family: 'Poppins', sans-serif;
+    font-size: ${({ theme }) => theme.fontSizes['400']};
   }
 
   h1, h2, h3 {
@@ -33,7 +34,9 @@ function MyApp({ Component, pageProps }) {
               neutral800: 'hsl(218, 28%, 13%)',
             },
             fontSizes: {
-              500: '1.125rem',
+              200: '0.625rem',
+              400: '1.125rem',
+              500: '1.25rem',
             },
             fontWeights: {
               regular: 400,

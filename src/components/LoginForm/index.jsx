@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
@@ -6,9 +5,14 @@ import styled from 'styled-components';
 
 import { addName } from '../../redux/actions';
 
+const Label = styled.label`
+  font-size: ${({ theme }) => theme.fontSizes['200']};
+  opacity: 0.8;
+  letter-spacing: 0.225em;
+`;
+
 const Input = styled.input`
   width: 100%;
-  margin-top: 0.25rem;
   background-color: transparent;
   padding: 1em 0.5rem;
   border: none;
@@ -47,20 +51,21 @@ function LoginForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     dispatch(addName(name));
     router.push('/quizz');
   };
 
   return (
     <form onSubmit={ (event) => handleSubmit(event) }>
-      <label>
-        What do you want to be called?
+      <Label>
+        WHAT DO YOU WAN&apos;T DO BE CALLED?
         <Input
           type="text"
           value={ name }
           onChange={ ({ target }) => setName(target.value) }
         />
-      </label>
+      </Label>
 
       <Play type="submit" disabled={ !name }>
         Play
