@@ -1,17 +1,17 @@
-/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 
 import Answer from './styled/Answer';
 import Next from './styled/Next';
 
 function Question({ questions }) {
   const router = useRouter();
+  const { timer: { over } } = useSelector((state) => state);
 
   const [currQuestion, setCurrQuestion] = useState(0);
   const [answered, setAnswered] = useState(false);
-  const [over, setOver] = useState(false);
 
   const generateAnswers = (correct, incorrect) => [
     { answer: correct, id: 'correct' },
@@ -20,7 +20,7 @@ function Question({ questions }) {
 
   return (
     <div>
-      {atob(questions[currQuestion].question)}
+      {window.atob(questions[currQuestion].question)}
 
       {
         generateAnswers(questions[currQuestion].correct_answer,
@@ -32,7 +32,7 @@ function Question({ questions }) {
                 disabled={ answered || over }
                 onClick={ () => setAnswered(true) }
               >
-                {atob(answer)}
+                {window.atob(answer)}
               </Answer>
             </ThemeProvider>
           ))

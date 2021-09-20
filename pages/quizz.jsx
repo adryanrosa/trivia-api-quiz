@@ -1,4 +1,4 @@
-import Question from '../src/components/Question';
+import dynamic from 'next/dynamic';
 
 export async function getServerSideProps() {
   const url = 'https://opentdb.com/api.php?amount=5&encode=base64';
@@ -12,10 +12,15 @@ export async function getServerSideProps() {
   };
 }
 
+const DynamicQuestion = dynamic(
+  () => import('../src/components/Question'),
+  { ssr: false },
+);
+
 function Quizz({ questions }) {
   return (
     <main>
-      <Question questions={ questions.results } />
+      <DynamicQuestion questions={ questions.results } />
     </main>
   );
 }
