@@ -6,7 +6,7 @@ const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.neutral800};
 
   .container {
-    max-width: 70rem;
+  max-width: 80rem;
   padding: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  @media (min-width: 60rem) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     padding: 1.5rem;
   }
   }
