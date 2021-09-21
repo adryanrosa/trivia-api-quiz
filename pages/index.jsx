@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import ImageQuizz from '../public/images/quizz.svg';
 import LoginForm from '../src/components/LoginForm';
+import IconSettings from '../public/icons/settings.svg';
 
 const Main = styled.main`
   padding: 2rem 1rem;
@@ -45,7 +46,9 @@ export default function Home() {
 
         <LoginForm />
         <Link href="/settings">
-          <Settings>Settings</Settings>
+          <Settings>
+            <Image src={ IconSettings } alt="setttings" />
+          </Settings>
         </Link>
       </div>
     </Main>
