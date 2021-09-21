@@ -1,13 +1,13 @@
 # Trivia API Quizz
 <!-- [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/adryanrosa/url-shortening-api-landing-page/blob/main/README.md) -->
 
-<!-- This is a solution to the [Shortly URL shortening API Challenge](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G) challenge on [Frontend Mentor](https://www.frontendmentor.io) -->
+This is a project from the Front-end module at Trybe
 
 ## Table of contents
 
 - [Overview](#overview)
   - [Live site and instructions](#live-site-and-instructions)
-<!--   - [The challenge](#the-challenge) -->
+  - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -33,16 +33,14 @@
     * Start the project:
      * `npm run dev` (a new tab should open in your default browser)
 
-<!-- ### The challenge
+### The challenge
 
 Users should be able to:
 
-- View the optimal layout for the site depending on their device's screen size
-- Shorten any valid URL
-- See a list of their shortened links
-- Copy the shortened link to their clipboard in a single click
-- Receive an error message when the `form` is submitted if:
-  - The `input` field is empty -->
+- Access the game page, where they must choose one of the answers available for each of the questions presented. The answer must be selected before the timer reaches zero, otherwise the answer must be considered wrong.
+- Be redirected, after 5 answered questions, to the score screen, where the text shown depends on the number of correct answers.
+- View the rankings, if they like to, at the end of each game.
+- Configure the game options in a settings page accessible at the start of the game.
 
 ### Screenshot
 
