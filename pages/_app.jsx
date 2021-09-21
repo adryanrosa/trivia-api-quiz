@@ -31,8 +31,10 @@ function MyApp({ Component, pageProps }) {
           theme={ {
             colors: {
               neutral100: 'hsl(0, 0%, 100%)',
+              neutral600: 'hsl(217, 28%, 15%)',
               neutral700: 'hsl(219, 30%, 18%)',
               neutral800: 'hsl(218, 28%, 13%)',
+              neutral900: 'hsl(216, 53%, 9%)',
             },
             fontSizes: {
               100: '0.625rem',
