@@ -1,17 +1,7 @@
 import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-
-export async function getServerSideProps() {
-  const url = 'https://opentdb.com/api.php?amount=5&encode=base64';
-  const res = await fetch(url);
-  const data = await res.json();
-
-  return {
-    props: {
-      questions: data,
-    },
-  };
-}
 
 const DynamicQuestion = dynamic(
   () => import('../src/components/Question'),
@@ -36,7 +26,26 @@ const Grid = styled.main`
   }
 `;
 
-function Quizz({ questions }) {
+function Quizz() {
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const { category, difficulty } = useSelector(({ settings }) => settings);
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      const url = `https://opentdb.com/api.php?amount=5&encode=base64&category=${category}&difficulty=${difficulty}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      setQuestions(data);
+      setLoading(false);
+    };
+
+    fetchQuestions();
+  }, [category, difficulty]);
+
+  if (loading) return 'Loading';
+
   return (
     <Grid>
       <DynamicQuestion questions={ questions.results } />
