@@ -27,6 +27,12 @@ function Question({ questions }) {
     dispatch(setOver(false));
   }, [dispatch, currQuestion]);
 
+  useEffect(() => {
+    if (time < 1) {
+      dispatch(setOver(true));
+    }
+  }, [dispatch, time]);
+
   return (
     <>
       <div>
