@@ -55,7 +55,7 @@ Users should be able to:
 - [Next.js](https://nextjs.org/) - React Framework
 - [Redux](https://redux.js.org/) - Global state management library
 - [styled-components](https://styled-components.com/) - CSS in JS library
-- [Trivia API](https://opentdb.com/api_config.php) - Rest API
+- [Trivia API](https://opentdb.com/api_config.php) - REST API
 - Mobile-first Workflow
 
 ### Useful resources
