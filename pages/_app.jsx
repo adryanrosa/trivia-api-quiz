@@ -51,6 +51,10 @@ function MyApp({ Component, pageProps }) {
               regular: 400,
               bold: 600,
             },
+            breakpoints: {
+              lg: '60rem',
+              'x-lg': '90rem',
+            },
           } }
         >
           <GlobalStyle />

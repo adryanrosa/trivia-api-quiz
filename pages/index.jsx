@@ -35,7 +35,6 @@ export default function Home() {
   return (
     <Main>
       <div className="container">
-        <h1>Hey</h1>
         <div className="image-container">
           <Image src={ ImageQuizz } />
         </div>

@@ -9,7 +9,7 @@ const Play = styled.button`
   font-size: ${({ theme }) => theme.fontSizes['500']};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   cursor: pointer;
-  padding: 0.75rem;
+  padding: 0.625rem;
   border-radius: 2rem;
   margin-top: 3rem;
 
