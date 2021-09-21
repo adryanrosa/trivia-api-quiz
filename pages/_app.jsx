@@ -40,6 +40,7 @@ function MyApp({ Component, pageProps }) {
             fontSizes: {
               100: '0.625rem',
               200: '0.875rem',
+              300: '1rem',
               400: '1.125rem',
               500: '1.25rem',
               700: '1.5rem',
