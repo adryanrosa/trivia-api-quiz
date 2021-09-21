@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Quizz</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <Provider store={ store }>
