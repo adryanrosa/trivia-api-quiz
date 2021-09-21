@@ -20,9 +20,9 @@ const Grid = styled.main`
   display: grid;
   gap: 2rem;
 
-  @media (min-width: 60rem) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     margin-top: 4rem;
-    max-width: 60rem;
+    max-width: 70rem;
     padding-left: 2rem;
     padding-right: 2rem;
     grid-template-columns: 4fr 5fr;
