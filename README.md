@@ -1,34 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Trivia API Quizz
+<!-- [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/adryanrosa/url-shortening-api-landing-page/blob/main/README.md) -->
 
-## Getting Started
+<!-- This is a solution to the [Shortly URL shortening API Challenge](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G) challenge on [Frontend Mentor](https://www.frontendmentor.io) -->
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
+- [Overview](#overview)
+  - [Live site and instructions](#live-site-and-instructions)
+<!--   - [The challenge](#the-challenge) -->
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
+  <!-- - [O que aprendi](#o-que-aprendi)
+  - [Desenvolvimento contínuo](#desenvolvimento-contínuo) -->
+<!-- - [Autor](#autor) -->
+
+## Overview
+
+### Live site and instructions
+
+- Please visit my application [at](https://quizz-adryanrosa.vercel.app/)
+- Want to check it locally? Follow the steps
+  1. Clone the repository
+    * `git clone git@github.com:adryanrosa/quizz.git`
+    * Enter the cloned repository folder:
+     * `cd quizz`
+
+  2. Install the dependencies and start the project
+    * Install the dependencies:
+     * `npm install`
+    * Start the project:
+     * `npm run dev` (a new tab should open in your default browser)
+
+<!-- ### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the site depending on their device's screen size
+- Shorten any valid URL
+- See a list of their shortened links
+- Copy the shortened link to their clipboard in a single click
+- Receive an error message when the `form` is submitted if:
+  - The `input` field is empty -->
+
+### Screenshot
+
+![screenshot](./screenshot.png)
+
+## My process
+
+### Built with
+
+- [Next.js](https://nextjs.org/) - React Framework
+- [Redux](https://redux.js.org/) - Global state management library
+- [styled-components](https://styled-components.com/) - CSS in JS library
+- [Trivia API](https://opentdb.com/api_config.php) - Rest API
+- Mobile-first Workflow
+
+### Useful resources
+
+- [Styled Components - Where to begin](https://www.youtube.com/watch?v=QdfjWRc4ySA&t=1049s)
+- [How to structure a Next, Styled Components project](https://www.youtube.com/watch?v=mJK5oGixSYo)
+
+<!-- ### O que aprendi
+
+Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+
+To see how you can add code snippets, see below:
+
+```html
+<h1>Some HTML code I'm proud of</h1>
+```
+```css
+.proud-of-this-css {
+  color: papayawhip;
+}
+```
+```js
+const proudOfThisFunc = () => {
+  console.log('🎉')
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Desenvolvimento contínuo
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect. -->
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<!-- ## Autor
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Website - [Add your name here](https://www.your-site.com)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@yourusername](https://www.twitter.com/yourusername) -->
