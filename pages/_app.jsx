@@ -43,6 +43,7 @@ function MyApp({ Component, pageProps }) {
               300: '1rem',
               400: '1.125rem',
               500: '1.25rem',
+              600: '1.375rem',
               700: '1.5rem',
               800: '1.75rem',
               900: '2rem',

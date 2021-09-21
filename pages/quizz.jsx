@@ -14,9 +14,9 @@ const DynamicQuestion = dynamic(
 
 const Grid = styled.main`
   max-width: 40rem;
-  margin: 2rem auto 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin: 2rem auto 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   display: grid;
   gap: 2rem;
 
