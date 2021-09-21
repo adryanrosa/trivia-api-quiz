@@ -12,7 +12,11 @@ import IconSettings from '../public/icons/settings.svg';
 import { addName } from '../src/redux/actions';
 
 const Main = styled.main`
-  padding: 2rem 1rem;
+  padding: 2rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding-top: 4rem;
+  }
 
   .container {
     max-width: 27.5rem;
