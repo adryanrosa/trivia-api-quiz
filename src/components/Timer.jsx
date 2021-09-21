@@ -9,7 +9,7 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   margin-bottom: 1rem;
-  padding: 0.625rem;
+  padding: 0.5rem;
   border: 0.125rem solid hsla(0, 0%, 100%, 18.75%);
   border-radius: 1.5rem;
   text-align: center;
