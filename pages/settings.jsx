@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 import { setCategory, setDifficulty } from '../src/redux/actions';
 import Button from '../src/components/styled/Button';
+import Back from '../src/components/styled/Back';
+import IconBack from '../public/icons/back.svg';
 
 export async function getStaticProps() {
   const url = 'https://opentdb.com/api_category.php';
@@ -20,7 +24,7 @@ export async function getStaticProps() {
 
 const Main = styled.main`
   padding: 2rem;
-  max-width: 37.5rem;
+  max-width: 70rem;
   margin-left: auto;
   margin-right: auto;
 
@@ -30,7 +34,12 @@ const Main = styled.main`
     margin-bottom: 0.75rem;
   }
 
-  button {
+  form {
+    max-width: 37.5rem;
+    margin: 1.5rem auto 0;
+  }
+
+  .submit {
     width: 100%;
     margin-top: 3rem;
     padding: 0.625rem;
@@ -73,6 +82,13 @@ function Settings({ categories }) {
     <Main>
       <h2>Settings</h2>
 
+      <Link href="/">
+        <Back>
+          <Image src={ IconBack } alt="Back" />
+          <span>Back</span>
+        </Back>
+      </Link>
+
       <form
         onSubmit={ (event) => {
           event.preventDefault();
@@ -111,7 +127,12 @@ function Settings({ categories }) {
             ))}
           </Select>
 
-          <Button type="submit">Apply</Button>
+          <Button
+            className="submit"
+            type="submit"
+          >
+            Apply
+          </Button>
         </label>
       </form>
     </Main>
