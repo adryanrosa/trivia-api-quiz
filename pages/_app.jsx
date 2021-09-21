@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import NextNprogress from 'nextjs-progressbar';
 import './reset.css';
 
 import store from '../src/redux/store';
@@ -52,6 +53,13 @@ function MyApp({ Component, pageProps }) {
           } }
         >
           <GlobalStyle />
+          <NextNprogress
+            color="hsl(198, 60%, 50%)"
+            startPosition={ 0.3 }
+            stopDelayMs={ 200 }
+            height={ 3 }
+            showOnShallow
+          />
           <Component { ...pageProps } />
         </ThemeProvider>
       </Provider>
