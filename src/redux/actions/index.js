@@ -8,6 +8,9 @@ export const RESET_TIME = 'RESET_TIME';
 
 export const SET_OVER = 'SET_OVER';
 
+export const SET_CATEGORY = 'SET_CATEGORY';
+export const SET_DIFFICULTY = 'SET_DIFFICULTY';
+
 export const addName = (name) => ({
   type: ADD_NAME,
   payload: name,
@@ -33,4 +36,14 @@ export const resetTime = () => ({
 export const setOver = (bool) => ({
   type: SET_OVER,
   payload: bool,
+});
+
+export const setCategory = (category) => ({
+  type: SET_CATEGORY,
+  payload: category,
+});
+
+export const setDifficulty = (difficulty) => ({
+  type: SET_DIFFICULTY,
+  payload: difficulty,
 });

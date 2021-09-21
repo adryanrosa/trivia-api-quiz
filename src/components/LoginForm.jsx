@@ -13,15 +13,15 @@ function LoginForm() {
 
   const [name, setName] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    dispatch(addName(name));
-    router.push('/quizz');
-  };
-
   return (
-    <form onSubmit={ (event) => handleSubmit(event) }>
+    <form
+      onSubmit={ (event) => {
+        event.preventDefault();
+
+        dispatch(addName(name));
+        router.push('/quizz');
+      } }
+    >
       <Label>
         WHAT DO YOU WAN&apos;T DO BE CALLED?
         <Input
