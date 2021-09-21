@@ -12,8 +12,10 @@ const Button = styled.button`
   width: 13.75rem;
   border-radius: 0.25rem;
   
-  &:hover {
-    filter: opacity(0.8);
+  @media (hover: hover) {
+    &:hover {
+      filter: opacity(0.8);
+    }
   }
 `;
 

@@ -14,7 +14,7 @@ const DynamicQuestion = dynamic(
 
 const Grid = styled.main`
   max-width: 40rem;
-  margin: 2rem auto 4rem;
+  margin: 2rem auto 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
   display: grid;
@@ -22,6 +22,7 @@ const Grid = styled.main`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     margin-top: 4rem;
+    margin-bottom: 4rem;
     max-width: 70rem;
     padding-left: 2rem;
     padding-right: 2rem;

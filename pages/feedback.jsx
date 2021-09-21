@@ -28,7 +28,7 @@ const Main = styled.main`
   .message {
     color: ${({ theme }) => (theme.goodScore ? '#84DD63' : '#F21B3F')};
     font-weight: ${({ theme }) => theme.fontWeights.bold};
-    opacity: 0.875;
+    opacity: 0.9375;
   }
 `;
 
