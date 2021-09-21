@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 import Image from 'next/image';
 
 import ImageQuizz from '../public/images/quizz.svg';
@@ -21,6 +22,18 @@ const Main = styled.main`
   }
 `;
 
+const Settings = styled.button`
+  display: block;
+  margin-left: auto;
+  margin-top: 0.625rem;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.neutral100};
+  opacity: 0.625;
+`;
+
 export default function Home() {
   return (
     <Main>
@@ -31,6 +44,9 @@ export default function Home() {
         </div>
 
         <LoginForm />
+        <Link href="/settings">
+          <Settings>Settings</Settings>
+        </Link>
       </div>
     </Main>
   );
