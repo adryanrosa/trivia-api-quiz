@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+import Header from '../src/components/Header';
 import Back from '../src/components/styled/Back';
 
 const DynamicRanks = dynamic(
@@ -20,14 +21,17 @@ const Main = styled.main`
 
 function Ranking() {
   return (
-    <Main>
-      <h2>Ranking</h2>
-      <Link href="/">
-        <Back>Home</Back>
-      </Link>
+    <>
+      <Header />
+      <Main>
+        <h2>Ranking</h2>
+        <Link href="/">
+          <Back>Home</Back>
+        </Link>
 
-      <DynamicRanks />
-    </Main>
+        <DynamicRanks />
+      </Main>
+    </>
   );
 }
 

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled, { ThemeProvider } from 'styled-components';
 
+import Header from '../src/components/Header';
 import Button from '../src/components/styled/Button';
 import Happy from '../public/images/happy.svg';
 import Sad from '../public/images/sad.svg';
@@ -49,40 +50,43 @@ function Feedback() {
   }, []);
 
   return (
-    <ThemeProvider theme={ { goodScore } }>
-      <Main>
-        <h2 className="message">
-          {
-            goodScore
-              ? 'Nice job!'
-              : 'Better luck next time...'
-          }
-        </h2>
+    <>
+      <Header />
+      <ThemeProvider theme={ { goodScore } }>
+        <Main>
+          <h2 className="message">
+            {
+              goodScore
+                ? 'Nice job!'
+                : 'Better luck next time...'
+            }
+          </h2>
 
-        <div className="image-container">
-          <Image src={ goodScore ? Happy : Sad } />
-        </div>
+          <div className="image-container">
+            <Image src={ goodScore ? Happy : Sad } />
+          </div>
 
-        <p>
-          You&apos;ve got
-          {' '}
-          <span className="message">{assertions}</span>
-          {' '}
-          {assertions === 1 ? 'question' : 'questions'}
-          {' '}
-          right
-        </p>
+          <p>
+            You&apos;ve got
+            {' '}
+            <span className="message">{assertions}</span>
+            {' '}
+            {assertions === 1 ? 'question' : 'questions'}
+            {' '}
+            right
+          </p>
 
-        <p>
-          Your score was
-          {' '}
-          <span className="message">{points}</span>
-        </p>
+          <p>
+            Your score was
+            {' '}
+            <span className="message">{points}</span>
+          </p>
 
-        <Link href="/quizz"><Button>Play Again</Button></Link>
-        <Link href="/ranking"><Button>Ranking</Button></Link>
-      </Main>
-    </ThemeProvider>
+          <Link href="/quizz"><Button>Play Again</Button></Link>
+          <Link href="/ranking"><Button>Ranking</Button></Link>
+        </Main>
+      </ThemeProvider>
+    </>
   );
 }
 

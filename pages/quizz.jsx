@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
+import Header from '../src/components/Header';
+
 const DynamicQuestion = dynamic(
   () => import('../src/components/Question'),
   { ssr: false },
@@ -47,9 +49,12 @@ function Quizz() {
   if (loading) return 'Loading';
 
   return (
-    <Grid>
-      <DynamicQuestion questions={ questions.results } />
-    </Grid>
+    <>
+      <Header />
+      <Grid>
+        <DynamicQuestion questions={ questions.results } />
+      </Grid>
+    </>
   );
 }
 
