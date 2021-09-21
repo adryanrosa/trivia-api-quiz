@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
+import { useSelector, useDispatch } from 'react-redux';
 import Image from 'next/image';
 import Link from 'next/link';
 import styled, { ThemeProvider } from 'styled-components';
@@ -8,6 +9,7 @@ import Header from '../src/components/Header';
 import Button from '../src/components/styled/Button';
 import Happy from '../public/images/happy.svg';
 import Sad from '../public/images/sad.svg';
+import { resetPoints } from '../src/redux/actions';
 
 const Main = styled.main`
   text-align: center;
@@ -33,6 +35,9 @@ const Main = styled.main`
 function Feedback() {
   const { name, assertions, points } = useSelector(({ user }) => user);
   const goodScore = assertions > 2;
+
+  const dispatch = useDispatch();
+  const router = useRouter();
 
   useEffect(() => {
     const newRank = {
@@ -82,7 +87,14 @@ function Feedback() {
             <span className="message">{points}</span>
           </p>
 
-          <Link href="/quizz"><Button>Play Again</Button></Link>
+          <Button
+            onClick={ () => {
+              dispatch(resetPoints());
+              router.push('/quizz');
+            } }
+          >
+            Play Again
+          </Button>
           <Link href="/ranking"><Button>Ranking</Button></Link>
         </Main>
       </ThemeProvider>

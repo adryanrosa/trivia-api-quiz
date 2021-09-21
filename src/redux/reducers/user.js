@@ -1,4 +1,4 @@
-import { ADD_NAME, ADD_ASSERTION, ADD_POINTS } from '../actions';
+import { ADD_NAME, ADD_ASSERTION, ADD_POINTS, RESET_POINTS } from '../actions';
 
 const INITIAL_STATE = ({
   name: '',
@@ -24,6 +24,12 @@ const user = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       points: state.points + action.payload,
+    };
+
+  case RESET_POINTS:
+    return {
+      ...state,
+      points: 0,
     };
 
   default: return state;

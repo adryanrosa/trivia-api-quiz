@@ -2,6 +2,7 @@ export const ADD_NAME = 'ADD_NAME';
 
 export const ADD_ASSERTION = 'ADD_ASSERTION';
 export const ADD_POINTS = 'ADD_POINTS';
+export const RESET_POINTS = 'RESET_POINTS';
 
 export const DECREASE_TIME = 'DECREASE_TIME';
 export const RESET_TIME = 'RESET_TIME';
@@ -23,6 +24,10 @@ export const addAssertion = () => ({
 export const addPoints = (points) => ({
   type: ADD_POINTS,
   payload: points,
+});
+
+export const resetPoints = () => ({
+  type: RESET_POINTS,
 });
 
 export const decreaseTime = () => ({
