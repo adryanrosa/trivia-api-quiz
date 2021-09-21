@@ -37,10 +37,11 @@ This is a project from the Trybe Front-end module
 
 Users should be able to:
 
-- Access the game page, where they must choose one of the answers available for each of the questions presented. The answer should be selected before the timer reaches zero, otherwise the answer must be considered wrong.
-- Be redirected, after 5 answered questions, to the score screen, where the text shown depends on the number of correct answers.
-- View the rankings, if they like to, at the end of each game.
-- Configure the game options in a settings page accessible at the start of the game.
+- Play as guest or enter their name at the beginning
+- Access the game page, where they must choose one of the answers available for each of the questions presented. The answer should be selected before the timer reaches zero, otherwise the answer must be considered wrong
+- Be redirected, after 5 answered questions, to the score screen, where the text shown depends on the number of correct answers
+- View the rankings, if they like to, after ending each game
+- Configure the game options in a settings page accessible at the start of the game
 
 ### Screenshot
 
