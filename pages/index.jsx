@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 
+import Settings from '../src/components/styled/Settings';
+import Guest from '../src/components/styled/Guest';
 import ImageQuizz from '../public/images/quizz.svg';
 import LoginForm from '../src/components/LoginForm';
 import IconSettings from '../public/icons/settings.svg';
@@ -24,28 +26,6 @@ const Main = styled.main`
   .image-container {
     margin-bottom: 3rem;
   }
-`;
-
-const Settings = styled.button`
-  display: block;
-  margin-left: auto;
-  background-color: transparent;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  color: ${({ theme }) => theme.colors.neutral100};
-  opacity: 0.625;
-`;
-
-const Guest = styled.button`
-  margin-top: 0.625rem;
-  background-color: transparent;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  font-size: ${({ theme }) => theme.fontSizes['300']};
-  color: ${({ theme }) => theme.colors.neutral100};
-  opacity: 0.625;
 `;
 
 export default function Home() {
