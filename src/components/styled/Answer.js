@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Answer = styled.button`
-  opacity: ${({ theme }) => { if (theme.over) return '0.875'; }};
+  opacity: ${({ theme }) => { if (theme.over) return '0.9375'; }};
   border: ${({ theme }) => {
     if (theme.over) {
       return `0.1875rem solid ${theme.id === 'correct'
@@ -21,7 +21,7 @@ const Answer = styled.button`
   color: ${({ theme }) => theme.colors.neutral100};
   cursor: pointer;
 
-  @media (min-width: 60rem) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     max-width: none;
   }
 
