@@ -1,9 +1,11 @@
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import Image from 'next/image';
 import styled from 'styled-components';
 
 import Header from '../src/components/Header';
+import LoadingGif from '../public/images/loading.gif';
 
 const DynamicQuestion = dynamic(
   () => import('../src/components/Question'),
@@ -28,6 +30,13 @@ const Grid = styled.main`
   }
 `;
 
+const Loading = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 function Quizz() {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,7 +55,13 @@ function Quizz() {
     fetchQuestions();
   }, [category, difficulty]);
 
-  if (loading) return 'Loading';
+  if (loading) {
+    return (
+      <Loading>
+        <Image src={ LoadingGif } alt="Loading" />
+      </Loading>
+    );
+  }
 
   return (
     <>
