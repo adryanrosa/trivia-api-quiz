@@ -16,10 +16,22 @@ const DynamicRanks = dynamic(
 
 const Main = styled.main`
   padding: 2rem;
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
 
   h2 {
     text-align: center;
     margin-bottom: 1rem;
+    font-size: ${({ theme }) => theme.fontSizes['900']}
+  }
+
+  .ranks {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.3175rem;
+    overflow: hidden;
   }
 `;
 
@@ -42,7 +54,9 @@ function Ranking() {
           <span>Home</span>
         </Back>
 
-        <DynamicRanks />
+        <div className="ranks">
+          <DynamicRanks />
+        </div>
       </Main>
     </>
   );
