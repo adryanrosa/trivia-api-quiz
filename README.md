@@ -1,7 +1,7 @@
 # Trivia API Quiz
 <!-- [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/adryanrosa/url-shortening-api-landing-page/blob/main/README.md) -->
 
-This is a project from the Trybe Front-end module
+This is a project from Trybe's Front-end module
 
 ## Table of contents
 
