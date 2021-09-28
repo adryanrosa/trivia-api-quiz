@@ -20,12 +20,12 @@ This is a project from the Trybe Front-end module
 
 ### Live site and instructions
 
-- Please visit my application [at](https://trivia-api-quiz-redux-adryanrosa.vercel.app/)
+- Please visit my application [at](https://trivia-api-quiz-adryanrosa.vercel.app/)
 - Want to check it locally? Follow the steps
   1. Clone the repository
-    * `git clone git@github.com:adryanrosa/trivia-api-quiz-redux.git`
+    * `git clone git@github.com:adryanrosa/trivia-api-quiz.git`
     * Enter the cloned repository folder:
-     * `cd trivia-api-quiz-redux`
+     * `cd trivia-api-quiz`
 
   2. Install the dependencies and start the project
     * Install the dependencies:
