@@ -1,4 +1,4 @@
-# Trivia API Quizz
+# Trivia API Quiz
 <!-- [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/adryanrosa/url-shortening-api-landing-page/blob/main/README.md) -->
 
 This is a project from the Trybe Front-end module
@@ -20,12 +20,12 @@ This is a project from the Trybe Front-end module
 
 ### Live site and instructions
 
-- Please visit my application [at](https://quizz-adryanrosa.vercel.app/)
+- Please visit my application [at](https://trivia-api-quiz-adryanrosa.vercel.app/)
 - Want to check it locally? Follow the steps
   1. Clone the repository
-    * `git clone git@github.com:adryanrosa/quizz.git`
+    * `git clone git@github.com:adryanrosa/trivia-api-quiz.git`
     * Enter the cloned repository folder:
-     * `cd quizz`
+     * `cd trivia-api-quiz`
 
   2. Install the dependencies and start the project
     * Install the dependencies:
